@@ -1,0 +1,24 @@
+env:
+- GO111MODULE=on
+before:
+  hooks:
+    - go mod download
+builds:
+- main: ./main.go
+  binary: ./bin/edit
+  env:
+  - CGO_ENABLED=0
+  goos:
+  - darwin
+  - linux
+  - windows
+  goarch:
+  - amd64
+archives:
+- files:
+  - LICENSE
+  - README.md
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}"

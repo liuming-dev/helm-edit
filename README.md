@@ -5,19 +5,27 @@
 
 > Edit a Helm release
 
-This plugin adds `helm edit` command. It opens the editor defined by `HELM_EDITOR`, `KUBE_EDITOR` or `EDITOR` environment variable and allows to edit the values and upgrade a release.
+This plugin adds `helm edit` command. It opens the editor defined by `EDITOR` environment variable (default `vi` if not set) and allows to edit the values and upgrade a release.
 
 ## Install
 
+- for helm v3
+
 ```bash
-$ helm plugin install https://github.com/mstrzele/helm-edit
+helm plugin install https://github.com/liuming-dev/helm-edit
+```
+
+- for helm v2
+
+```bash
+helm plugin install https://github.com/mstrzele/helm-edit
 ```
 
 ## Usage
 
 ```bash
+# edit the smiling-penguin release
 $ helm edit smiling-penguin
-# Edits the smiling-penguin release
 ```
 
 [![asciicast](https://asciinema.org/a/131663.png)](https://asciinema.org/a/131663)
@@ -25,6 +33,7 @@ $ helm edit smiling-penguin
 ## Maintainers
 
 [@mstrzele](https://github.com/mstrzele)
+[@liuming-dev](https://github.com/liuming-dev)
 
 ## Contribute
 
